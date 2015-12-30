@@ -143,39 +143,6 @@
             </objects>
             <point key="canvasLocation" x="552" y="525"/>
         </scene>
-        <!--Math Jax Test-->
-        <scene sceneID="2dM-Pe-1Cf">
-            <objects>
-                <viewController id="3aY-Ik-VEb" customClass="MathJaxTest" customModule="test_markdown" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Pfq-BZ-hpp"/>
-                        <viewControllerLayoutGuide type="bottom" id="BJ9-HE-NBi"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5V2-0f-81v">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQc-5V-9qs">
-                                <rect key="frame" x="20" y="28" width="560" height="552"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="vQc-5V-9qs" firstAttribute="top" secondItem="Pfq-BZ-hpp" secondAttribute="bottom" constant="8" id="JUR-g4-wZm"/>
-                            <constraint firstItem="BJ9-HE-NBi" firstAttribute="top" secondItem="vQc-5V-9qs" secondAttribute="bottom" constant="20" id="Rfx-RC-H9p"/>
-                            <constraint firstItem="vQc-5V-9qs" firstAttribute="leading" secondItem="5V2-0f-81v" secondAttribute="leadingMargin" id="eHi-4C-PEJ"/>
-                            <constraint firstItem="vQc-5V-9qs" firstAttribute="trailing" secondItem="5V2-0f-81v" secondAttribute="trailingMargin" id="t6O-Bx-u5j"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="webView" destination="vQc-5V-9qs" id="6vW-zT-gGq"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Na-HC-LTi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-158" y="1198"/>
-        </scene>
     </scenes>
     <resources>
         <image name="thumbs-down" width="130" height="130"/>
