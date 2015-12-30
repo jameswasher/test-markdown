@@ -15,39 +15,22 @@ enum TestType {
 
 class FlaschardVC: UIViewController {
 
-    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var webView: FlashCardView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var thumbsDownButton: UIButton!
     @IBOutlet weak var thumbsUpButton: UIButton!
     
     var showFront = true
     var currentCardIndex = 0
-    var deckOfCards: [Flashcard] = []
+    var deckOfCards: [Flashcard]!
     var testType: TestType!
+    
+    var user = User.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        var frontMarkdown = "What are the aspects of product strategy alignment?"
-        var backMarkdown = "## &ldquo;Significant misalignment is a formula for failure&rdquo; \n * Mission \n * Vision \n * Strategy \n * Culture \n * Core competencies \n * Target markets \n * Products"
-
-        let flashcard1 = Flashcard(frontMarkdown: frontMarkdown, backMarkdown: backMarkdown, frontImage: UIImage(named: "front1")!, backImage: UIImage(named: "back1")!)
         
-        frontMarkdown = "Describe the accounting treatment of retroactive reinsurance"
-        backMarkdown = "\n* The ceded reserves are recorded as a negative write in item in the balance sheet \n* Any gain is recorded as \n  - other income in the income statement \n  - special surplus in the balance sheet"
-        
-        let flashcard2 = Flashcard(frontMarkdown: frontMarkdown, backMarkdown: backMarkdown, frontImage: UIImage(named: "front2")!, backImage: UIImage(named: "back2")!)
-        
-        frontMarkdown = "What is the quadratic formula?"
-        backMarkdown = "When $a &#92;ne 0$, there are two solutions to &#92;(ax^2 + bx + c = 0&#92;) and they are $$x = {-b &#92;pm &#92;sqrt{b^2-4ac} &#92;over 2a}.$$"
-        
-        let flashcard3 = Flashcard(frontMarkdown: frontMarkdown, backMarkdown: backMarkdown, frontImage: UIImage(named: "front1")!, backImage: UIImage(named: "back1")!)
-        
-        deckOfCards.append(flashcard3)
-        deckOfCards.append(flashcard1)
-        deckOfCards.append(flashcard2)
-
-
+        self.deckOfCards = user.flashCardDeck
         refreshUI()
     }
 
@@ -91,11 +74,7 @@ class FlaschardVC: UIViewController {
             thumbsDownButton.hidden = true
             thumbsUpButton.hidden = true
             if testType == TestType.HTML {
-                let urlPath = getDocumentsDirectory().stringByAppendingString("/front.html")
-                print(urlPath)
-                let url = NSURL(fileURLWithPath: urlPath, isDirectory: false)
-                let request = NSURLRequest(URL: url)
-                webView.loadRequest(request)
+                webView.showFront()
             } else {
                 imageView.image = currentCard.frontImage
             }
@@ -104,10 +83,7 @@ class FlaschardVC: UIViewController {
             thumbsDownButton.hidden = false
             thumbsUpButton.hidden = false
             if testType == TestType.HTML {
-                let urlPath = getDocumentsDirectory().stringByAppendingString("/back.html")
-                let url = NSURL(fileURLWithPath: urlPath, isDirectory: false)
-                let request = NSURLRequest(URL: url)
-                webView.loadRequest(request)
+                webView.showBack()
             } else {
                 imageView.image = currentCard.backImage
             }

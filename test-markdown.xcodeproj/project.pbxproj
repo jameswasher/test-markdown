@@ -19,6 +19,7 @@
 		1A4BA5891C2C6BCD00D84B39 /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4BA5881C2C6BCD00D84B39 /* Flashcard.swift */; };
 		1A4BA58B1C2C7BAF00D84B39 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4BA58A1C2C7BAF00D84B39 /* MainVC.swift */; };
 		BF70A24A1C346592002B93E8 /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF70A2491C346592002B93E8 /* FlashCardView.swift */; };
+		BF70A2511C346C36002B93E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF70A2501C346C36002B93E8 /* User.swift */; };
 		BFD8B85F1C32F58E00179F5F /* MathJax in Resources */ = {isa = PBXBuildFile; fileRef = BFD8B85E1C32F58E00179F5F /* MathJax */; };
 		BFD8B8631C33408100179F5F /* front.html in Resources */ = {isa = PBXBuildFile; fileRef = BFD8B8621C33408100179F5F /* front.html */; };
 		BFD8B8651C33408C00179F5F /* back.html in Resources */ = {isa = PBXBuildFile; fileRef = BFD8B8641C33408C00179F5F /* back.html */; };
@@ -40,6 +41,7 @@
 		1A4BA5881C2C6BCD00D84B39 /* Flashcard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
 		1A4BA58A1C2C7BAF00D84B39 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		BF70A2491C346592002B93E8 /* FlashCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
+		BF70A2501C346C36002B93E8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BFD8B85E1C32F58E00179F5F /* MathJax */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MathJax; sourceTree = "<group>"; };
 		BFD8B8621C33408100179F5F /* front.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = front.html; sourceTree = "<group>"; };
 		BFD8B8641C33408C00179F5F /* back.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = back.html; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				1A4BA56A1C2B31EE00D84B39 /* AppDelegate.swift */,
 				BFD8B8661C337E1500179F5F /* Functions.swift */,
 				1A4BA5881C2C6BCD00D84B39 /* Flashcard.swift */,
+				BF70A2501C346C36002B93E8 /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				BF70A24A1C346592002B93E8 /* FlashCardView.swift in Sources */,
 				1A4BA58B1C2C7BAF00D84B39 /* MainVC.swift in Sources */,
 				1A4BA57D1C2B31FF00D84B39 /* Markdown.swift in Sources */,
+				BF70A2511C346C36002B93E8 /* User.swift in Sources */,
 				BFD8B8671C337E1500179F5F /* Functions.swift in Sources */,
 				1A4BA5891C2C6BCD00D84B39 /* Flashcard.swift in Sources */,
 				1A4BA56B1C2B31EE00D84B39 /* AppDelegate.swift in Sources */,

@@ -32,12 +32,20 @@ class Flashcard {
         return nil
     }
     
+
     
     init() {
         
     }
     
-    init(frontMarkdown: String, backMarkdown: String, frontImage: UIImage, backImage: UIImage) {
+    convenience init(frontMarkdown: String, backMarkdown: String) {
+        self.init()
+        self.frontMarkdown = frontMarkdown
+        self.backMarkdown = backMarkdown
+    }
+    
+    convenience init(frontMarkdown: String, backMarkdown: String, frontImage: UIImage, backImage: UIImage) {
+        self.init()
         self.frontMarkdown = frontMarkdown
         self.backMarkdown = backMarkdown
         self.frontImage = frontImage
