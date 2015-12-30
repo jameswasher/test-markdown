@@ -91,8 +91,9 @@ class FlaschardVC: UIViewController {
             thumbsDownButton.hidden = true
             thumbsUpButton.hidden = true
             if testType == TestType.HTML {
-                let urlPath = NSBundle.mainBundle().pathForResource("front", ofType: "html")
-                let url = NSURL(fileURLWithPath: urlPath!, isDirectory: false)
+                let urlPath = getDocumentsDirectory().stringByAppendingString("/front.html")
+                print(urlPath)
+                let url = NSURL(fileURLWithPath: urlPath, isDirectory: false)
                 let request = NSURLRequest(URL: url)
                 webView.loadRequest(request)
             } else {
@@ -103,8 +104,8 @@ class FlaschardVC: UIViewController {
             thumbsDownButton.hidden = false
             thumbsUpButton.hidden = false
             if testType == TestType.HTML {
-                let urlPath = NSBundle.mainBundle().pathForResource("back", ofType: "html")
-                let url = NSURL(fileURLWithPath: urlPath!, isDirectory: false)
+                let urlPath = getDocumentsDirectory().stringByAppendingString("/back.html")
+                let url = NSURL(fileURLWithPath: urlPath, isDirectory: false)
                 let request = NSURLRequest(URL: url)
                 webView.loadRequest(request)
             } else {

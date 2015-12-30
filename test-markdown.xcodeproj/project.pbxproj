@@ -23,6 +23,7 @@
 		BFD8B8611C33031500179F5F /* MathJaxTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8B8601C33031500179F5F /* MathJaxTest.swift */; };
 		BFD8B8631C33408100179F5F /* front.html in Resources */ = {isa = PBXBuildFile; fileRef = BFD8B8621C33408100179F5F /* front.html */; };
 		BFD8B8651C33408C00179F5F /* back.html in Resources */ = {isa = PBXBuildFile; fileRef = BFD8B8641C33408C00179F5F /* back.html */; };
+		BFD8B8671C337E1500179F5F /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8B8661C337E1500179F5F /* Functions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		BFD8B8601C33031500179F5F /* MathJaxTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathJaxTest.swift; sourceTree = "<group>"; };
 		BFD8B8621C33408100179F5F /* front.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = front.html; sourceTree = "<group>"; };
 		BFD8B8641C33408C00179F5F /* back.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = back.html; sourceTree = "<group>"; };
+		BFD8B8661C337E1500179F5F /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				1A4BA57C1C2B31FF00D84B39 /* Markdown.swift */,
 				1A4BA56A1C2B31EE00D84B39 /* AppDelegate.swift */,
 				1A4BA56C1C2B31EE00D84B39 /* FlashcardVC.swift */,
+				BFD8B8661C337E1500179F5F /* Functions.swift */,
 				1A4BA58A1C2C7BAF00D84B39 /* MainVC.swift */,
 				1A4BA57E1C2B528600D84B39 /* FrontHeader.html */,
 				1A4BA5861C2C697300D84B39 /* BackHeader.html */,
@@ -129,6 +132,7 @@
 				TargetAttributes = {
 					1A4BA5661C2B31EE00D84B39 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = PQ3HEEN697;
 					};
 				};
 			};
@@ -178,6 +182,7 @@
 				1A4BA56D1C2B31EE00D84B39 /* FlashcardVC.swift in Sources */,
 				1A4BA58B1C2C7BAF00D84B39 /* MainVC.swift in Sources */,
 				1A4BA57D1C2B31FF00D84B39 /* Markdown.swift in Sources */,
+				BFD8B8671C337E1500179F5F /* Functions.swift in Sources */,
 				BFD8B8611C33031500179F5F /* MathJaxTest.swift in Sources */,
 				1A4BA5891C2C6BCD00D84B39 /* Flashcard.swift in Sources */,
 				1A4BA56B1C2B31EE00D84B39 /* AppDelegate.swift in Sources */,
@@ -293,10 +298,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "test-markdown/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.theinfiniteactuary.test-markdown";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -304,10 +312,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "test-markdown/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.theinfiniteactuary.test-markdown";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

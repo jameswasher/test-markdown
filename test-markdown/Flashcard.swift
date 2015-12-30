@@ -63,27 +63,23 @@ class Flashcard {
     }
     
     func writeFlashcardToFile() {
-        if let filepath = NSBundle.mainBundle().pathForResource("front", ofType: "html") {
-            do {
-                try self.frontHTML!.writeToFile(filepath, atomically: false, encoding: NSUTF8StringEncoding)
-            } catch {
-                print("unable to write to front.html")
-            }
-        } else {
-            // missing file
-            print("can not find front.html")
+        let frontfile = getDocumentsDirectory().stringByAppendingString("/front.html")
+        let backfile = getDocumentsDirectory().stringByAppendingString("/back.html")
+        
+        do {
+            try self.frontHTML!.writeToFile(frontfile, atomically: false, encoding: NSUTF8StringEncoding)
+        } catch {
+            print("unable to write to front.html")
         }
         
-        if let filepath = NSBundle.mainBundle().pathForResource("back", ofType: "html") {
-            do {
-                try self.backHTML!.writeToFile(filepath, atomically: false, encoding: NSUTF8StringEncoding)
-            } catch {
+        do {
+            try self.backHTML!.writeToFile(backfile, atomically: false, encoding: NSUTF8StringEncoding)
+        } catch {
                 print("unable to write to back.html")
-            }
-        } else {
-            // missing file
-            print("can not find back.html")
         }
+        
     }
+    
+    
     
 }
