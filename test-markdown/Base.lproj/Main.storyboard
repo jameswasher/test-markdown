@@ -37,17 +37,161 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Cards in Deck: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6q-VE-VbM">
+                                <rect key="frame" x="20" y="40" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="raD-as-sgb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DpF-dR-HZE">
+                                <rect key="frame" x="20" y="69" width="96" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6tr-Kc-VZM"/>
+                                    <constraint firstAttribute="width" constant="96" id="qmA-8h-Zel"/>
+                                </constraints>
+                                <state key="normal" title="Practice Deck"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="PracticeDeck" id="QTt-T6-CQb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hr6-ac-sO5">
+                                <rect key="frame" x="20" y="107" width="121" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="XtT-lx-jh5"/>
+                                    <constraint firstAttribute="height" constant="30" id="bMk-Yq-iVH"/>
+                                </constraints>
+                                <state key="normal" title="Add Card to Deck"/>
+                                <connections>
+                                    <segue destination="Zva-RX-Udr" kind="show" id="aOt-fe-3Vl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="b6q-VE-VbM" firstAttribute="top" secondItem="h3s-8F-FcY" secondAttribute="bottom" constant="20" id="0Pe-sd-yPk"/>
                             <constraint firstItem="2Tk-U7-Hc2" firstAttribute="centerX" secondItem="YpP-vr-0zP" secondAttribute="centerX" id="4Ig-cI-qTb"/>
+                            <constraint firstItem="Hr6-ac-sO5" firstAttribute="top" secondItem="DpF-dR-HZE" secondAttribute="bottom" constant="8" id="Eue-WF-5ul"/>
+                            <constraint firstItem="DpF-dR-HZE" firstAttribute="top" secondItem="b6q-VE-VbM" secondAttribute="bottom" constant="8" id="Ihl-o9-JoR"/>
+                            <constraint firstItem="DpF-dR-HZE" firstAttribute="leading" secondItem="YpP-vr-0zP" secondAttribute="leadingMargin" id="RVP-aB-8QG"/>
+                            <constraint firstItem="Hr6-ac-sO5" firstAttribute="leading" secondItem="YpP-vr-0zP" secondAttribute="leadingMargin" id="c8Q-mX-nkn"/>
+                            <constraint firstItem="b6q-VE-VbM" firstAttribute="leading" secondItem="YpP-vr-0zP" secondAttribute="leadingMargin" id="cbQ-m9-xH4"/>
                             <constraint firstAttribute="bottom" secondItem="2Tk-U7-Hc2" secondAttribute="bottom" constant="20" symbolic="YES" id="tqO-uO-BVs"/>
+                            <constraint firstItem="b6q-VE-VbM" firstAttribute="trailing" secondItem="YpP-vr-0zP" secondAttribute="trailingMargin" id="wnx-qg-Qzi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cardsInDeckLabel" destination="b6q-VE-VbM" id="6Mi-XK-DgI"/>
+                        <outlet property="practiceDeckButton" destination="DpF-dR-HZE" id="YhW-0O-ZXC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGr-Pn-BPn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-158" y="513"/>
+        </scene>
+        <!--Add CardVC-->
+        <scene sceneID="odd-PG-Zzh">
+            <objects>
+                <viewController id="Zva-RX-Udr" customClass="AddCardVC" customModule="test_markdown" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T1t-ZX-9bC"/>
+                        <viewControllerLayoutGuide type="bottom" id="SEL-Yr-W3e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="F7e-0P-h5O">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Front Markdown:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzN-go-lpt">
+                                <rect key="frame" x="20" y="40" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="D66-EB-ax8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Fw4-VJ-UER">
+                                <rect key="frame" x="20" y="69" width="560" height="100"/>
+                                <color key="backgroundColor" red="0.0" green="0.72059697690000002" blue="5.9099410660000001e-05" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Wnp-IA-vke"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back Markdown:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wr8-Me-nkp">
+                                <rect key="frame" x="20" y="177" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="fyO-bH-Ivd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="z8P-Vt-ohj">
+                                <rect key="frame" x="20" y="206" width="560" height="100"/>
+                                <color key="backgroundColor" red="0.98431378599999997" green="0.59607845540000004" blue="0.1176470667" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="qEq-pb-nFU"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rd3-2Z-a2M">
+                                <rect key="frame" x="20" y="314" width="61" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="61" id="rde-oz-cHQ"/>
+                                    <constraint firstAttribute="height" constant="30" id="tcZ-7J-UtY"/>
+                                </constraints>
+                                <state key="normal" title="add card"/>
+                                <connections>
+                                    <action selector="addCardPressed:" destination="Zva-RX-Udr" eventType="touchUpInside" id="asj-YZ-JRf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSt-oh-Gb7">
+                                <rect key="frame" x="110" y="314" width="88" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="MfE-Aj-PL4"/>
+                                    <constraint firstAttribute="height" constant="30" id="XwE-XO-tCC"/>
+                                </constraints>
+                                <state key="normal" title="preview card"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="yjc-Ez-HpD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fw4-VJ-UER" firstAttribute="top" secondItem="uzN-go-lpt" secondAttribute="bottom" constant="8" id="56m-la-HsN"/>
+                            <constraint firstItem="wr8-Me-nkp" firstAttribute="top" secondItem="Fw4-VJ-UER" secondAttribute="bottom" constant="8" id="66q-Fw-G0D"/>
+                            <constraint firstItem="z8P-Vt-ohj" firstAttribute="top" secondItem="wr8-Me-nkp" secondAttribute="bottom" constant="8" id="9Id-Rb-Mdo"/>
+                            <constraint firstItem="wr8-Me-nkp" firstAttribute="trailing" secondItem="F7e-0P-h5O" secondAttribute="trailingMargin" id="E3r-Dt-o5R"/>
+                            <constraint firstItem="uzN-go-lpt" firstAttribute="trailing" secondItem="F7e-0P-h5O" secondAttribute="trailingMargin" id="Fpg-g6-MTm"/>
+                            <constraint firstItem="z8P-Vt-ohj" firstAttribute="leading" secondItem="F7e-0P-h5O" secondAttribute="leadingMargin" id="GgQ-Jh-AL5"/>
+                            <constraint firstItem="qSt-oh-Gb7" firstAttribute="leading" secondItem="Rd3-2Z-a2M" secondAttribute="trailing" constant="29" id="K3p-rC-OzE"/>
+                            <constraint firstItem="Rd3-2Z-a2M" firstAttribute="top" secondItem="z8P-Vt-ohj" secondAttribute="bottom" constant="8" id="KaQ-B5-fjM"/>
+                            <constraint firstItem="Fw4-VJ-UER" firstAttribute="trailing" secondItem="F7e-0P-h5O" secondAttribute="trailingMargin" id="SBr-sd-FIK"/>
+                            <constraint firstItem="qSt-oh-Gb7" firstAttribute="top" secondItem="z8P-Vt-ohj" secondAttribute="bottom" constant="8" id="Ux3-jz-800"/>
+                            <constraint firstItem="Rd3-2Z-a2M" firstAttribute="leading" secondItem="F7e-0P-h5O" secondAttribute="leadingMargin" id="e1C-gr-yNM"/>
+                            <constraint firstItem="wr8-Me-nkp" firstAttribute="leading" secondItem="F7e-0P-h5O" secondAttribute="leadingMargin" id="mJl-IO-xBN"/>
+                            <constraint firstItem="uzN-go-lpt" firstAttribute="top" secondItem="T1t-ZX-9bC" secondAttribute="bottom" constant="20" id="os7-cb-dn4"/>
+                            <constraint firstItem="z8P-Vt-ohj" firstAttribute="trailing" secondItem="F7e-0P-h5O" secondAttribute="trailingMargin" id="qSH-gR-eK8"/>
+                            <constraint firstItem="uzN-go-lpt" firstAttribute="leading" secondItem="F7e-0P-h5O" secondAttribute="leadingMargin" id="s0c-y9-VKF"/>
+                            <constraint firstItem="Fw4-VJ-UER" firstAttribute="leading" secondItem="F7e-0P-h5O" secondAttribute="leadingMargin" id="ud6-IM-9Ne"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backMarkdownTextView" destination="z8P-Vt-ohj" id="rmq-6z-wKY"/>
+                        <outlet property="frontMarkdownTextView" destination="Fw4-VJ-UER" id="ZJB-zl-rq4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4NN-1p-acP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-113" y="1213"/>
         </scene>
         <!--FlaschardVC-->
         <scene sceneID="tne-QT-ifu">
@@ -146,6 +290,6 @@
         <image name="thumbs-up" width="130" height="130"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0rq-tp-Ht4"/>
+        <segue reference="QTt-T6-CQb"/>
     </inferredMetricsTieBreakers>
 </document>

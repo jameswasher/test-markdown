@@ -10,11 +10,21 @@ import UIKit
 
 class MainVC: UIViewController {
     
-    
     var user = User.sharedInstance
     
+    @IBOutlet weak var cardsInDeckLabel: UILabel!
+    @IBOutlet weak var practiceDeckButton: UIButton!
+    
+    
     override func viewDidLoad() {
+        super.viewDidLoad()
         copyMathJaxToDocuments()
+        updateUI()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        updateUI()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -27,8 +37,21 @@ class MainVC: UIViewController {
                 destinationVC.testType = TestType.HTML
             }
             
-            destinationVC.deckOfCards = createSampleDeck()
+            if segue.identifier == "PracticeDeck" {
+                destinationVC.deckOfCards = user.flashCardDeck
+            } else {
+                destinationVC.deckOfCards = createSampleDeck()
+            }
             
+        }
+    }
+    
+    func updateUI() {
+        cardsInDeckLabel.text = "Number of Cards in Deck: \(user.flashCardDeck.count)"
+        if user.flashCardDeck.count == 0 {
+            practiceDeckButton.enabled = false
+        } else {
+            practiceDeckButton.enabled = true
         }
     }
     
