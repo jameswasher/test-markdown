@@ -29,8 +29,6 @@ class FlaschardVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.deckOfCards = user.flashCardDeck
         refreshUI()
     }
 
