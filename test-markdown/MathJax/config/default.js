@@ -36,6 +36,8 @@
  *  want to change them from their default values.
  */
 
+MathJax.Hub.Config({messageStyle: 'none',tex2jax: {preview: 'none'}});
+
 MathJax.Hub.Config({
 
   //
@@ -146,7 +148,7 @@ MathJax.Hub.Config({
   //  "Loading..." and "Processing..." rather than showing the full file name and the
   //  percentage of the mathematics processed.
   //
-  messageStyle: "normal",
+  messageStyle: "none",
   
   //
   //  These two parameters control the alignment and shifting of displayed equations.

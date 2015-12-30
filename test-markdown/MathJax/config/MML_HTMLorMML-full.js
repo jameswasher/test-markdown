@@ -14,6 +14,8 @@
 
 MathJax.Hub.Config({delayJaxRegistration: true});
 
+MathJax.Hub.Config({messageStyle: 'none',tex2jax: {preview: 'none'}});
+
 MathJax.Ajax.Preloading(
   "[MathJax]/jax/input/MathML/config.js",
   "[MathJax]/jax/output/HTML-CSS/config.js",

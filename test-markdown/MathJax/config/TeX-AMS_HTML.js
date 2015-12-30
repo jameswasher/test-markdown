@@ -12,6 +12,8 @@
  *      http://www.apache.org/licenses/LICENSE-2.0
  */
 
+MathJax.Hub.Config({messageStyle: 'none',tex2jax: {preview: 'none'}});
+
 MathJax.Ajax.Preloading(
   "[MathJax]/jax/input/TeX/config.js",
   "[MathJax]/jax/output/HTML-CSS/config.js",

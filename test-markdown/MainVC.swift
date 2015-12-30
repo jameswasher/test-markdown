@@ -13,6 +13,10 @@ class MainVC: UIViewController {
     
     @IBOutlet weak var testTypeSegmentedControl: UISegmentedControl!
     
+    override func viewDidLoad() {
+        copyMathJaxToDocuments()
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if let destinationVC = segue.destinationViewController as? FlaschardVC {
