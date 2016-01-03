@@ -36,13 +36,12 @@ func copyMathJaxToDocuments() {
             for file in fileList {
                 let newFilePath = mathJaxDocuments.stringByAppendingString("/\(file)")
                 let oldFilePath = mathJaxBundle.stringByAppendingString("/\(file)")
-                if !fileManager.fileExistsAtPath(newFilePath) {
-                    do {
-                        try fileManager.copyItemAtPath(oldFilePath, toPath: newFilePath)
-                        print("copying \(file)")
-                    } catch {
-                        print("unable to copy \(file)")
-                    }
+                
+                do {
+                    try fileManager.copyItemAtPath(oldFilePath, toPath: newFilePath)
+                    print("copying \(file)")
+                } catch {
+                    print("unable to copy \(file)")
                 }
             }
         } catch {
