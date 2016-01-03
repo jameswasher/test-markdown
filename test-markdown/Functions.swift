@@ -8,6 +8,8 @@
 
 import Foundation
 
+let version = "firstlaunch0.2"
+
 func getDocumentsDirectory() -> NSString {
     let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
     let documentsDirectory = paths[0]
@@ -16,10 +18,23 @@ func getDocumentsDirectory() -> NSString {
 
 
 func copyMathJaxToDocuments() {
+    
+    // only copy if it is the first launch of the current version
+    if !isFirstLaunch() {
+        return
+    }
+    
     let fileManager = NSFileManager.defaultManager()
     
     if let mathJaxBundle = NSBundle.mainBundle().resourcePath?.stringByAppendingString("/MathJax") {
         let mathJaxDocuments = getDocumentsDirectory().stringByAppendingString("/MathJax")
+        
+        do {
+            try fileManager.removeItemAtPath(mathJaxDocuments)
+            print("deleted MathJax documents directory")
+        } catch {
+            print("unable to delete MathJax documents directory")
+        }
         
         // if MathJax directory doesn't exist then create it
         if !fileManager.fileExistsAtPath(mathJaxDocuments) {
@@ -50,5 +65,16 @@ func copyMathJaxToDocuments() {
         
     }
     
+}
+
+func isFirstLaunch() -> Bool {
+    if !NSUserDefaults.standardUserDefaults().boolForKey(version) {
+        print("Is a first launch")
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: version)
+        NSUserDefaults.standardUserDefaults().synchronize();
+        return true
+    }
+    
+    return false
 }
 
